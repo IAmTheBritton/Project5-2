@@ -11,3 +11,19 @@ E:\Project5\Project5\Project5\obj\Debug\Project5.Properties.Resources.resources
 E:\Project5\Project5\Project5\obj\Debug\Project5.csproj.GenerateResource.Cache
 E:\Project5\Project5\Project5\obj\Debug\Project5.exe
 E:\Project5\Project5\Project5\obj\Debug\Project5.pdb
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\bin\Debug\Project5.exe.config
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\Project5.exe
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\Project5.pdb
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\bin\Debug\Project5.exe
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\bin\Debug\Project5.pdb
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\Project5.csprojResolveAssemblyReference.cache
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\MainWindow.baml
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\MainWindow.g.cs
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\App.g.cs
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\Project5_MarkupCompile.cache
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\Project5.g.resources
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\Project5.Properties.Resources.resources
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\Project5.csproj.GenerateResource.Cache
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\addWindow.g.cs
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\Project5_MarkupCompile.lref
+C:\Users\victo_000\Documents\Visual Studio 2015\Projects\Project5-2\Project5\Project5\obj\Debug\addWindow.baml

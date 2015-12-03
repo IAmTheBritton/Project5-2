@@ -22,9 +22,9 @@ namespace Project5
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Polygon> polygonList = new List<Polygon>();
-        List<Polyline> polylineList = new List<Polyline>();
-        List<Ellipse> pointList = new List<Ellipse>();
+        public static List<Polygon> polygonList = new List<Polygon>();
+        public static List<Polyline> polylineList = new List<Polyline>();
+        public static List<Ellipse> pointList = new List<Ellipse>();
 
         Rectangle highlight = new Rectangle();
         public MainWindow()
@@ -214,6 +214,20 @@ namespace Project5
                         sw.WriteLine("point " + k.Name + (Canvas.GetLeft(k) + 5) + " " + (Canvas.GetTop(k) + 5));
                     }
                 }
+            }
+        }
+
+        private void openAdd(object sender, RoutedEventArgs e)
+        {
+            addWindow addWin = new addWindow();
+            addWin.Show();
+        }
+
+        public Canvas getCanvas
+        {
+            get
+            {
+                return mapCanvas;
             }
         }
     }
