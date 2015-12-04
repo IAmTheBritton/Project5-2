@@ -91,14 +91,13 @@ namespace Project5
                             polylineList.Add(tempLine);
                             mapCanvas.Children.Add(tempLine);
                         }
-                        else
+                        else if (line[0] == "point")
                         {
 
                             Ellipse tempElip = new Ellipse();
                             tempElip.Width = 10;
-                            tempElip.Height = tempElip.Width;
-                            Canvas.SetLeft(tempElip, Convert.ToDouble(line[2]) - 5);
-                            Canvas.SetTop(tempElip, Convert.ToDouble(line[3]) - 5);
+                            tempElip.Height = 10;
+                            setCanvas(tempElip, Convert.ToDouble(line[2]), Convert.ToDouble(line[3]));
                             if (line[1] == "city")
                             {
                                 tempElip.Fill = new SolidColorBrush(Color.FromRgb(0, 0, 0));
@@ -114,20 +113,9 @@ namespace Project5
                         }
 
                     }
-                    foreach (var k in polygonList)
-                    {
-                        itemList.Items.Add(k.Name);
-                    }
-                    foreach (var k in polylineList)
-                    {
-                        itemList.Items.Add(k.Name);
-                    }
-                    foreach (var k in pointList)
-                    {
-                        itemList.Items.Add(k.Name);
-                    }
+                    reprintItemList();
                 }
-                catch (IOException i)
+                catch (IOException)
                 {
                     itemList.Items.Add("Error in file");
                 }
@@ -161,9 +149,10 @@ namespace Project5
                 Canvas.SetLeft(highlight, minp.X);
                 Canvas.SetTop(highlight, minp.Y);
             }
-            else 
+            else if (itemList.SelectedIndex >= 0)
             {
-                Point minp, maxp = new Point();
+                Point minp = new Point();
+                Point maxp = new Point();
                 minp = polygonList[itemList.SelectedIndex].Points[0];
                 maxp = polygonList[itemList.SelectedIndex].Points[0];
                 foreach (Point k in polygonList[itemList.SelectedIndex].Points)
@@ -211,13 +200,36 @@ namespace Project5
                     }
                     foreach (Ellipse k in pointList)
                     {
-                        sw.WriteLine("point " + k.Name + (Canvas.GetLeft(k) + 5) + " " + (Canvas.GetTop(k) + 5));
+                        sw.WriteLine("point " + k.Name + " " + (Canvas.GetLeft(k) + 5) + " " + (Canvas.GetTop(k) + 5));
                     }
                 }
             }
         }
 
-        private void openAdd(object sender, RoutedEventArgs e)
+        public void setCanvas(Shape temp, double x, double y)
+        {
+            Canvas.SetLeft(temp, x - 5);
+            Canvas.SetTop(temp, y - 5);
+        }
+
+        public void reprintItemList()
+        {
+            itemList.Items.Clear();
+            foreach (var k in polygonList)
+            {
+                itemList.Items.Add(k.Name);
+            }
+            foreach (var k in polylineList)
+            {
+                itemList.Items.Add(k.Name);
+            }
+            foreach (var k in pointList)
+            {
+                itemList.Items.Add(k.Name);
+            }
+        }
+
+        public void openAdd(object sender, RoutedEventArgs e)
         {
             addWindow addWin = new addWindow();
             addWin.Show();
@@ -229,6 +241,37 @@ namespace Project5
             {
                 return mapCanvas;
             }
+        }
+        public ListBox getListBox
+        {
+            get
+            {
+                return itemList;
+            }
+        }
+
+        private void removeSelected(object sender, RoutedEventArgs e)
+        {
+            try {
+                if (itemList.SelectedIndex >= polygonList.Count + polylineList.Count)
+                {
+                    pointList.RemoveAt(itemList.SelectedIndex - (polygonList.Count + polylineList.Count));
+                }
+                else if (itemList.SelectedIndex >= polygonList.Count && itemList.SelectedIndex < polygonList.Count + polylineList.Count)
+                {
+                    polylineList.RemoveAt(itemList.SelectedIndex - polygonList.Count);
+                }
+                else if (itemList.SelectedIndex >= 0)
+                {
+                    polygonList.RemoveAt(itemList.SelectedIndex);
+                }
+                itemList.Items.Remove(itemList.SelectedItem);
+                mapCanvas.Children.Clear();
+                foreach (Polygon item in polygonList) mapCanvas.Children.Add(item);
+                foreach (Polyline item in polylineList) mapCanvas.Children.Add(item);
+                foreach (Ellipse item in pointList) mapCanvas.Children.Add(item);
+            }
+            catch { }
         }
     }
 }

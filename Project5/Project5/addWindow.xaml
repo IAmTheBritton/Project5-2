@@ -10,7 +10,7 @@
         <TabControl x:Name="tabControl" Height="269" VerticalAlignment="Top">
             <TabItem x:Name="roadTab" Header="Road">
                 <Grid Background="#FFE5E5E5">
-                    <TextBox x:Name="roadTextBox" HorizontalAlignment="Left" Height="145" Margin="10,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350"/>
+                    <TextBox x:Name="roadTextBox" HorizontalAlignment="Left" Height="145" Margin="10,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" AcceptsReturn="True"/>
                     <Button x:Name="addRoadButton" Content="Add" HorizontalAlignment="Left" Margin="285,211,0,0" VerticalAlignment="Top" Width="75" Click="addRoad"/>
                     <Label x:Name="label" Content="Format: X,Y" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="350" Height="26"/>
                     <Label x:Name="label1" Content="Each line is a new point." HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
@@ -19,7 +19,7 @@
             <TabItem x:Name="borderTab" Header="Border">
                 <Grid Background="#FFE5E5E5">
                     <Label x:Name="label_Copy" Content="Format: X, Y" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="350" Height="26"/>
-                    <TextBox x:Name="borderTextBox" HorizontalAlignment="Left" Height="145" Margin="10,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350"/>
+                    <TextBox x:Name="borderTextBox" HorizontalAlignment="Left" Height="145" Margin="10,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" AcceptsReturn="True"/>
                     <Button x:Name="addBorderButton" Content="Add" HorizontalAlignment="Left" Margin="285,211,0,0" VerticalAlignment="Top" Width="75" Click="addBorder"/>
                     <Label x:Name="label1_Copy" Content="Each line is a new point." HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
                 </Grid>
@@ -27,22 +27,44 @@
             <TabItem x:Name="riverTab" Header="River" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
                 <Grid Background="#FFE5E5E5">
                     <Label x:Name="label_Copy1" Content="Format: X, Y" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="350" Height="26"/>
-                    <TextBox x:Name="riverTextBox" HorizontalAlignment="Left" Height="145" Margin="10,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350"/>
+                    <TextBox x:Name="riverTextBox" HorizontalAlignment="Left" Height="145" Margin="10,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" AcceptsReturn="True"/>
                     <Button x:Name="addRiverButton" Content="Add" HorizontalAlignment="Left" Margin="285,211,0,0" VerticalAlignment="Top" Width="75" Click="addRiver"/>
                     <Label x:Name="label1_Copy1" Content="Each line is a new point." HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="cityTab" Header="City" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Label x:Name="xLabel" Content="X:" HorizontalAlignment="Left" Margin="90,97,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="yLabel" Content="Y:" HorizontalAlignment="Left" Margin="234,97,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="xCityText" HorizontalAlignment="Left" Height="23" Margin="115,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+                    <TextBox x:Name="yCityText" HorizontalAlignment="Left" Height="23" Margin="258,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+                    <Button x:Name="addCityButton" Content="Add" HorizontalAlignment="Left" Margin="285,211,0,0" VerticalAlignment="Top" Width="75" Click="addCity"/>
+                </Grid>
             </TabItem>
             <TabItem x:Name="mountainTab" Header="Mountain" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="addMountainButton" Content="Add" HorizontalAlignment="Left" Margin="285,211,0,0" VerticalAlignment="Top" Width="75" Click="addMountain"/>
+                    <Label x:Name="xLabel_Copy" Content="X:" HorizontalAlignment="Left" Margin="88,93,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="yLabel_Copy" Content="Y:" HorizontalAlignment="Left" Margin="232,93,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="xMountainText" HorizontalAlignment="Left" Height="23" Margin="113,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+                    <TextBox x:Name="yMountainText" HorizontalAlignment="Left" Height="23" Margin="256,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+                </Grid>
             </TabItem>
             <TabItem x:Name="landTab" Header="Land" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="landTextBox" HorizontalAlignment="Left" Height="145" Margin="10,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" AcceptsReturn="True"/>
+                    <Button x:Name="addLandButton" Content="Add" HorizontalAlignment="Left" Margin="285,211,0,0" VerticalAlignment="Top" Width="75" Click="addLand"/>
+                    <Label x:Name="label_Copy2" Content="Format: X,Y" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="350" Height="26"/>
+                    <Label x:Name="label1_Copy2" Content="Each line is a new point." HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
+                </Grid>
             </TabItem>
             <TabItem x:Name="lakeTab" Header="Lake" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="lakeTextBox" HorizontalAlignment="Left" Height="145" Margin="10,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" AcceptsReturn="True"/>
+                    <Button x:Name="addLakeButton" Content="Add" HorizontalAlignment="Left" Margin="285,211,0,0" VerticalAlignment="Top" Width="75" Click="addLake"/>
+                    <Label x:Name="label_Copy3" Content="Format: X,Y" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="350" Height="26"/>
+                    <Label x:Name="label1_Copy3" Content="Each line is a new point." HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
+                </Grid>
             </TabItem>
         </TabControl>
 
